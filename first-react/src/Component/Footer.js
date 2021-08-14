@@ -4,7 +4,7 @@ export class Footer extends Component {
     render() {
         return (
             <div>
-                AuthorName: Shukri
+               <h1> AuthorName: Shukri </h1>
             </div>
         )
     }

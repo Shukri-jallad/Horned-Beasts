@@ -1,21 +1,22 @@
 import React, { Component } from "react";
 import HornedBeasts from "./HornedBeasts";
-
+import data from "./data.json";
 
 export class Main extends Component {
   render() {
+    let arrayTotal = data;
+
     return (
       <div>
-        <HornedBeasts
-          image="http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg"
-          title="HornedBeast"
-          discription="A unicorn and a narwhal nuzzling their horns"
-        />
-        <HornedBeasts
-          image="http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg"
-          title="HornedBeast"
-          discription="A unicorn and a narwhal nuzzling their horns"
-        />
+        {arrayTotal.map((item) => {
+          return (
+            <HornedBeasts
+              image={item.image_url}
+              title={item.title}
+              description={item.description}
+            />
+          );
+        })}
       </div>
     );
   }

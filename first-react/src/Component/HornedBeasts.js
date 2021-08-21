@@ -1,32 +1,19 @@
 import React, { Component } from "react";
+import { Card, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export class HornedBeasts extends Component {
-  constructor() {
-    super();
-    this.state = {
-      click: 0,
-    };
-  }
-
-  addLikes=()=>{
-    this.setState({
-        click:this.state.click+1
-    })
-  }
-
   render() {
     return (
       <div>
-        <h2>Title</h2>
-        <img
-        onClick={()=>{this.addLikes()}}
-          src={this.props.image}
-          alt={this.props.title}
-          width="500"
-          height="600"
-        />
-        <p>{this.props.description}</p>
-        <p>{this.state.click}</p>
+        <Card style={{ width: "18rem" }}>
+          <Card.Img variant="top" src={this.props.items.image_url} />
+          <Card.Body>
+            <Card.Title>{this.props.items.title}</Card.Title>
+            <Card.Text>{this.props.items.description}</Card.Text>
+            <Button onClick={this.props.clickMain}>Go somewhere</Button>
+          </Card.Body>
+        </Card>
       </div>
     );
   }

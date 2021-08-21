@@ -1,22 +1,16 @@
 import React, { Component } from "react";
 import HornedBeasts from "./HornedBeasts";
-import data from "./data.json";
+import { Container, Row } from "react-bootstrap";
 
 export class Main extends Component {
   render() {
-    let arrayTotal = data;
-
     return (
       <div>
-        {arrayTotal.map((item) => {
-          return (
-            <HornedBeasts
-              image={item.image_url}
-              title={item.title}
-              description={item.description}
-            />
-          );
-        })}
+        <Container>
+          <Row>
+          <HornedBeasts items={this.props.dataPass} clickMain={this.props.clickMaster} />
+          </Row>
+        </Container>
       </div>
     );
   }
